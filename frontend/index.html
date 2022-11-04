@@ -41,6 +41,18 @@
         .font-weight-600 {
             font-weight: 600;
         }
+        body input.form-control {
+          background: #323232;
+          border-color: gray;
+          color: #fff
+        }
+        body input.form-control:active,
+        body input.form-control:focus {
+          background: #323232;
+          border-color: rgb(255, 123, 0);
+          color: #fff;
+          box-shadow: 0 0 0 0.25rem rgb(255 123 0 / 25%);
+        }
     </style>
 </head>
 
@@ -53,13 +65,39 @@
         <button id="atualizar" class="btn btn-light">Atualizar</button>
     </div>
     <hr class="border-light">
+    <div class="container">
+      <form id="form-create" action="/" method="post">
+        <div class="row align-items-end text-white">
+          <div class="col-3">
+            <label class="form-label" for="nome">Nome</label>
+            <input class="form-control" type="text" id="nome" />
+          </div>
+          <div class="col-2">
+            <label class="form-label" for="idade">Idade</label>
+            <input class="form-control" type="text" id="idade" />
+          </div>
+          <div class="col-3">
+            <label class="form-label" for="jogo">Jogo</label>
+            <input class="form-control" type="text" id="jogo" />
+          </div>
+          <div class="col-2">
+            <label class="form-label" for="pontuacao">Pontuação</label>
+            <input class="form-control" type="text" id="pontuacao" />
+          </div>
+          <div class="col-1">
+            <button class="btn btn-primary" type="submit">Criar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <hr class="border-light">
     <div class="px-3">
         <table id="dynamodb-data" class="w-100 text-light">
             <thead class="text-center font-weight-600" style="border-bottom: 1px solid #afafaf">
                 <tr>
-                    <td>ID</td>                
-                    <td>Nome</td>                
-                    <td>Idade</td>                
+                    <td>ID</td>
+                    <td>Nome</td>
+                    <td>Idade</td>
                     <td>Jogo</td>
                     <td class="last">Pontuação</td>
                 </tr>
